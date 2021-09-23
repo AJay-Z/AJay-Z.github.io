@@ -1,15 +1,1 @@
-var OriginTitle = document.title;
-var titleTime;
-document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/img/favicon.ico");
-        document.title = '上号！上号！🤩';
-        clearTimeout(titleTime);
-    } else {
-        $('[rel="icon"]').attr('href', "/img/favicon.ico");
-        document.title = '专心点，别挂机😡' + OriginTitle;
-        titleTime = setTimeout(function() {
-            document.title = OriginTitle;
-        }, 2000);
-    }
-});
+"use strict";var top_up="<img id='upj' class='upj' style='max-width: 1000%; transform: translate(-70px,-70px);' src='https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif' title='回到顶部' >";document.getElementById("go-up").innerHTML+=top_up;
