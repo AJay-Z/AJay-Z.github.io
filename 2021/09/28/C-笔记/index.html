@@ -1,0 +1,499 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C#笔记 | AJayの博客</title><meta name="keywords" content="C#"><meta name="author" content="AJay-Z"><meta name="copyright" content="AJay-Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C#开发基础入门基本输出信息在namespace(命名空间)包括若干个class(类)，C#程序是由类组成的，Main为C#入口，输出命令为Console.write命令结束形式为分号;  注：console.write为不换行输出,console.writeLine为换行输出。  关键字 class ，这个关键字的用途是声明类。比如上面例子中，类名叫做Program。关键字 namespace">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#笔记">
+<meta property="og:url" content="https://ajay-z.github.io/2021/09/28/C-%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="AJayの博客">
+<meta property="og:description" content="C#开发基础入门基本输出信息在namespace(命名空间)包括若干个class(类)，C#程序是由类组成的，Main为C#入口，输出命令为Console.write命令结束形式为分号;  注：console.write为不换行输出,console.writeLine为换行输出。  关键字 class ，这个关键字的用途是声明类。比如上面例子中，类名叫做Program。关键字 namespace">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/img/R001.jpg">
+<meta property="article:published_time" content="2021-09-28T07:09:56.000Z">
+<meta property="article:modified_time" content="2021-09-28T08:55:19.568Z">
+<meta property="article:author" content="AJay-Z">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/img/R001.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ajay-z.github.io/2021/09/28/C-%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zykjofficial/zykjofficial.github.io@master/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":30},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: AJay-Z","link":"链接: ","source":"来源: AJayの博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C#笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-28 16:55:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/AJay.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script async src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/img/I.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> AJay音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> AJay电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> AJay相册</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book faa-float animated"></i><span> AJay图书馆</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad faa--float animated"></i><span> AJay游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/img/B003.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">AJayの博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> AJay音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> AJay电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> AJay相册</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book faa-float animated"></i><span> AJay图书馆</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad faa--float animated"></i><span> AJay游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C#笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-28T07:09:56.000Z" title="发表于 2021-09-28 15:09:56">2021-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-28T08:55:19.568Z" title="更新于 2021-09-28 16:55:19">2021-09-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C#笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="C-开发基础入门"><a href="#C-开发基础入门" class="headerlink" title="C#开发基础入门"></a>C#开发基础入门</h3><h6 id="基本输出信息"><a href="#基本输出信息" class="headerlink" title="基本输出信息"></a>基本输出信息</h6><p>在namespace(命名空间)包括若干个class(类)，C#程序是由类组成的，Main为C#入口，输出命令为Console.write命令结束形式为分号;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826103437331.png" alt="image-20210826103437331"></p>
+<font color=blue>注：console.write为不换行输出,console.writeLine为换行输出。</font>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">关键字 class ，这个关键字的用途是声明类。比如上面例子中，类名叫做Program。</span><br><span class="line"></span><br><span class="line">关键字 namespace ，这个关键字的用途是声明“命名空间”。比如上面例子中，命名空间叫做MyApp1。</span><br><span class="line"></span><br><span class="line">关键字 using ，这个关键字的用途是导入命名空间。比如这句：using System.Text; 作用是导入System.Text命名空间中的类。</span><br><span class="line"></span><br><span class="line">关键字 static (静态的)、 void (无返回值)、 string (字符串类型)。常常在Main()方法的声明中看到:static void Main(string[] args)</span><br><span class="line"></span><br><span class="line">Main() 方法是 C# 中的特殊方法，是程序的入口，就是说，如果没有 Main ()方法，程序就无法启动。</span><br><span class="line"></span><br><span class="line">注意：你会发现，所有关键字都是由小写字母组成的，C#语言中，大小写是严格区分的。</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">注释：</span><br><span class="line">//单行注释</span><br><span class="line">/*</span><br><span class="line">行注释</span><br><span class="line">*/</span><br><span class="line">///是文档注释，只能写在类、方法、属性的前面。不能用来注释单个变量。</span><br></pre></td></tr></table></figure>
+<h6 id="C-的常量"><a href="#C-的常量" class="headerlink" title="C#的常量"></a>C#的常量</h6><p>常量，顾名思义，就是“不会改变的量”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210824151902047.png" alt="image-20210824151902047"></p>
+<p>使用 const 关键字来声明某个常量字段或常量局部变量。</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> 是整数类型赋值</span><br><span class="line">double是双精度类型赋值，精度有效<span class="number">15</span>位</span><br><span class="line">float是浮点性赋值，一般位<span class="number">1</span>位小数</span><br><span class="line">decimal是<span class="number">128</span>位数据类型</span><br></pre></td></tr></table></figure>
+<h6 id="算法——交换"><a href="#算法——交换" class="headerlink" title="算法——交换"></a>算法——交换</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">如何将两个变量的值交换，其中需要一个中间变量也就是“无赋值的变量”，接下来就可以将变量互换。</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210824160052563.png" alt="image-20210824160052563"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">上图因为男孩女孩的名字反了，所以需要代码交换回来，当然一般只需要把代码改一下，就可以了。但此算法还是有用的。方法就是:</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">temp = a;</span><br><span class="line">a = b;</span><br><span class="line">b = temp;</span><br></pre></td></tr></table></figure>
+<h6 id="C-的数据类型"><a href="#C-的数据类型" class="headerlink" title="C#的数据类型"></a>C#的数据类型</h6><p>字符类型 <strong>char</strong> ，存储用 ‘’ (单引号)括起来的一个字符，例如：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">char sex=<span class="comment">&#x27;男&#x27;;//存储性别</span></span><br></pre></td></tr></table></figure>
+<p>字符串类型 <strong>string</strong> ，存储用“”（双引号）括起来的一串字符，例如：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">string address=<span class="string">&quot;北京市宣武区牛街北口&quot;</span>;//存储地址</span><br></pre></td></tr></table></figure>
+<p>整数类型 <strong>int</strong> ，存储整数，例如：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age=<span class="number">23</span>;//存储年龄</span><br></pre></td></tr></table></figure>
+<p>双精度浮点型 <strong>double</strong> ，存储小数，例如：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">double salary=<span class="number">7991.63</span>;//存储工资</span><br></pre></td></tr></table></figure>
+<h6 id="C-的类型转换"><a href="#C-的类型转换" class="headerlink" title="C#的类型转换"></a>C#的类型转换</h6><p><strong>自动类型转换</strong>：2种不同类型的数据运算，低精度类型会自动转换为较高精度的类型。</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">double d=<span class="number">2</span>;//输出结果为<span class="number">2.0</span><span class="keyword">int</span> i=<span class="number">3.0</span>;//此命令出错</span><br></pre></td></tr></table></figure>
+<p><strong>强制类型转换</strong>：无法自动转换为我们需要的类型，可以用强制类型转换，比如上例可以这样完成：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i=(<span class="keyword">int</span>)<span class="number">3.0</span>;//输出结果为<span class="number">3</span>当double型强制转换为<span class="keyword">int</span>型将失去小数部分double a=(<span class="keyword">int</span>)<span class="number">2.8</span>;//输出结果为<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h6 id="C-标识符的命名规则"><a href="#C-标识符的命名规则" class="headerlink" title="C#标识符的命名规则"></a><strong>C#标识符的命名规则</strong></h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">①标识符只能由英文字母、数字和下划线组成，不能包含空格和其他字符。错误的标识符声明：`string $user; //错在使用了其他字符`②变量名不能用数字开头。错误的标识符声明：`double <span class="number">6</span>h;//错在用数字开头`③不能用关键字当变量名。错误的标识符声明：`char static;//错在用关键字static做变量名</span><br></pre></td></tr></table></figure>
+<h6 id="C-的算术运算符"><a href="#C-的算术运算符" class="headerlink" title="C#的算术运算符"></a><strong>C#的算术运算符</strong></h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">加(+)、减(-)、乘(*)、除(/)、余数(%)、自加(++)、自减(--)</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">另外，`age++;`与`age--;`也可以写作`++age;`或`--age;`但请注意：如果与其他运算在同一语句中，++写在变量前面或后面，算法不一样，请看下例：</span><br></pre></td></tr></table></figure>
+<p>Console.WriteLine(age++);作用等同于下面两句：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">Console.WriteLine(age);//先打印age=age+<span class="number">1</span>;//后自加</span><br></pre></td></tr></table></figure>
+<p>Console.WriteLine(++age);作用等同于下面两句：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">age=age+<span class="number">1</span>;//先自加Console.WriteLine(age);//后打印</span><br></pre></td></tr></table></figure>
+<h6 id="C-的比较运算符"><a href="#C-的比较运算符" class="headerlink" title="C#的比较运算符"></a>C#的比较运算符</h6><p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210824171748022.png" alt="image-20210824171748022"></p>
+<font color=blue>注：等于是有两个等于符号的</font>
+
+<h6 id="C-的逻辑运算符"><a href="#C-的逻辑运算符" class="headerlink" title="C#的逻辑运算符"></a>C#的逻辑运算符</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">C#中的逻辑运算符包括：逻辑非( ! )、逻辑与( &amp;&amp; )、逻辑或( || )&amp;&amp; 运算符，两边同真才算真，一边为假就算假； || 运算符，一边为真即为真，两边同假才是假</span><br></pre></td></tr></table></figure>
+<h6 id="C-的运算符优先级"><a href="#C-的运算符优先级" class="headerlink" title="C#的运算符优先级"></a>C#的运算符优先级</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">①括号。学数学的时候我们就知道，要先计算括号里面的内容。C#语言也是一样，如果有多层括号，要从里向外计算。括号优先级最高。②一元运算符。有些运算符两边有<span class="number">2</span>个操作数，比如<span class="number">2</span>+<span class="number">3</span>、<span class="number">6</span>%<span class="number">5</span>等等，这些叫做二元运算符。只有一个操作数的叫做一元运算符，它们的优先级高于二元运算符。一元运算符包括：++(自加) 、 --（自减） 、 !（逻辑非）。③*（乘）、/（除）、%（取余）。④+（加）、-（减）。⑤&gt;（大于）、&lt;（小于）、&gt;=（大于等于）、&lt;=（小于等于）。⑥==（等于）、!=（不等于）。⑦&amp;&amp;（逻辑与）。⑧||（逻辑或）。⑨赋值运算符。包括：=、+=、-=、*=、/=、%=。另外，还需要注意一点：优先级相同的运算符从左向右计算（赋值运算符相反）。</span><br></pre></td></tr></table></figure>
+<h6 id="C-用流程图描述程序逻辑"><a href="#C-用流程图描述程序逻辑" class="headerlink" title="C#用流程图描述程序逻辑"></a>C#用流程图描述程序逻辑</h6><p>流程图是程序步骤的图形化表示方法。流程图中包括如下符号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826095603765.png" alt="image-20210826095603765"></p>
+<h6 id="C-中判断和分支"><a href="#C-中判断和分支" class="headerlink" title="C#中判断和分支"></a>C#中判断和分支</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(做判断)，结束不用分号。判断内容用大括号。</span><br></pre></td></tr></table></figure>
+<h6 id="C-中if…else条件结构"><a href="#C-中if…else条件结构" class="headerlink" title="C#中if…else条件结构"></a>C#中if…else条件结构</h6><p>if语句的条件必须是bool类型的表达式。</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">由 <span class="keyword">if</span> 和 <span class="keyword">else</span> 组成的结构是条件结构的一种，它的基本逻辑是：当条件为 true 时，执行分支<span class="number">1</span>，否则，执行分支<span class="number">2</span>。</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826100110683.png" alt="image-20210826100110683"></p>
+<h6 id="C-中嵌套的if结构"><a href="#C-中嵌套的if结构" class="headerlink" title="C#中嵌套的if结构"></a>C#中嵌套的if结构</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">程序开发中，往往需要先判断一个条件是否成立，再判断另一个条件。比如下面的例子：验证账号是否为“admin”，如果不是则提示错误；如果是，则验证密码是否为“bj2022”：</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826100522828.png" alt="image-20210826100522828"></p>
+<h6 id="C-中多重if结构"><a href="#C-中多重if结构" class="headerlink" title="C#中多重if结构"></a>C#中多重if结构</h6><p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826101404109.png" alt="image-20210826101404109"></p>
+<h6 id="C-中else与if的匹配"><a href="#C-中else与if的匹配" class="headerlink" title="C#中else与if的匹配"></a>C#中else与if的匹配</h6><p>if…else 条件结构中，如果某个分支只包含一条命令，那么是可以省略大括号{}的。</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">当出现多个 <span class="keyword">if</span> 和 <span class="keyword">else</span> ，又没有&#123;&#125;来界定范围时，请参考下面<span class="number">2</span>条原则：①每一个 <span class="keyword">else</span> 与前面离它最近的 <span class="keyword">if</span> 配对。按照这个原则，上面示例代码的两个 <span class="keyword">else</span> 都与第二个 <span class="keyword">if</span> 配对，这显然是不可能的，于是又有了第二个原则。②多个 <span class="keyword">else</span> 都与同一个 <span class="keyword">if</span> 相近时，最内层的 <span class="keyword">else</span> 优先配对。这样，第一个 <span class="keyword">else</span> 处于内层，就与第二个 <span class="keyword">if</span> 优先配对，第二个 <span class="keyword">else</span> 只能与第一个 <span class="keyword">if</span> 配对。上面的示例代码会输出“C”。</span><br></pre></td></tr></table></figure>
+<h6 id="C-的条件运算符"><a href="#C-的条件运算符" class="headerlink" title="C#的条件运算符"></a>C#的条件运算符</h6><p>C#提供了一种<strong>条件运算符</strong>，能够代替简单的 if…else 结构。这种条件运算符的语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">条件表达式 ? 分支1 : 分支2</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">?: 就是条件运算符，可以看到它有<span class="number">3</span>个操作数，所以又被称为三元运算符。它的运算逻辑是：当条件表达式为 true 时，执行分支<span class="number">1</span>；当条件表达式为 false 时，执行分支<span class="number">2</span>。</span><br></pre></td></tr></table></figure>
+<h6 id="C-的switch结构"><a href="#C-的switch结构" class="headerlink" title="C#的switch结构"></a>C#的switch结构</h6><p><strong>if…else</strong> 之外，C#中还有一种 <strong>switch 条件结构</strong>，可以<strong>用来对变量进行多个分支的等值判断</strong>。语法如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826101828464.png" alt="image-20210826101828464"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">变量与每一个 case 后面的常量进行等值比较，如果相等，就执行对应的分支。执行分支以后， break 关键字会使 switch 结构中止，不会再判断后面的常量。如果变量与所有的常量都不相同，则执行 default 后面的分支。</span><br></pre></td></tr></table></figure>
+<h6 id="C-循环流程图和while循环"><a href="#C-循环流程图和while循环" class="headerlink" title="C#循环流程图和while循环"></a>C#循环流程图和while循环</h6><p> 程序连续的重复一个步骤称为“<strong>循环</strong>”。循环可以简化我们的代码，减少冗余。例如，打印 1-10 的整数，我们可以写 10 条打印语句，也可以这样：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151213478.png" alt="image-20210826151213478"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">这个循环结构，会首先判断 x&lt;=<span class="number">10</span> ，条件为真时执行循环体（“输出x”和“x++”），之后，再次判断条件 x&lt;=<span class="number">10</span> ，若条件为真则继续执行循环体......若条件为假，则结束循环。简单的说，循环是由循环体（需要重复执行的命令）和循环条件组成的。运行时，先判断循环条件，若条件为 true ，就执行循环体一次，然后再判断条件...当条件为 false 时，结束循环。上面的流程图，当变量 x 累加到 <span class="number">11</span> 时，循环条件为 false ，循环就会结束。</span><br></pre></td></tr></table></figure>
+<p>C#中，可以用 <strong>while</strong> 循环结构来实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151325139.png" alt="image-20210826151325139"></p>
+<p>对比代码和流程图可知， <strong>while 循环结构中，循环条件写在 () 中，循环体写在 {} 中</strong>。运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151343669.png" alt="image-20210826151343669"></p>
+<h6 id="C-算法——求和"><a href="#C-算法——求和" class="headerlink" title="C#算法——求和"></a>C#算法——求和</h6><p><strong>求和算法的基本步骤</strong>：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">①声明变量 sum 用来存储“和”。 sum 的初始值赋为 <span class="number">0</span> 。②循环，用变量 x 访问每一个数字，用 sum+=x 的方式累加。（即 sum=sum+x; ）③循环结束后， sum 中存储的即是和。</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151439447.png" alt="image-20210826151439447"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151448943.png" alt="image-20210826151448943"></p>
+<h6 id="C-中for循环"><a href="#C-中for循环" class="headerlink" title="C#中for循环"></a>C#中for循环</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">C#中有一种非常有用的 <span class="keyword">for</span> 循环，特别适合于“已知循环次数”的循环。比如，循环打印<span class="number">3</span>次“我能行！”，用 <span class="keyword">while</span> 循环可以这样写：</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151527104.png" alt="image-20210826151527104"></p>
+<p>而用 <strong>for</strong> 循环这样写：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151543845.png" alt="image-20210826151543845"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">可以看出来， <span class="keyword">while</span> 循环有的变量声明、循环条件、变量自加， <span class="keyword">for</span> 循环一个也不缺，但是 <span class="keyword">for</span> 循环把这些跟循环次数有关的元素都放在 ( ; ; ) 中，使得&#123;&#125;中的循环体更加纯粹，程序结构更加清晰。<span class="keyword">for</span>循环 ( ; ; ) 中的两个分号是不能缺少的。</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> 循环运行时，首先进行变量声明和赋值；接下来判断循环条件，若条件为 true ，则执行循环体一次，若条件为 false ，则结束循环；执行循环体后，进行变量自加。然后会进入下一次循环</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151637780.png" alt="image-20210826151637780"></p>
+<h6 id="C-中do…while循环"><a href="#C-中do…while循环" class="headerlink" title="C#中do…while循环"></a>C#中do…while循环</h6><p>C#中， <strong>do…while</strong> 循环也是一种常用的循环结构。循环结构各部分运行顺序如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151727158.png" alt="image-20210826151727158"></p>
+<p>从上面的示意可以看出， <strong>do…while</strong> 循环第一次执行循环体是没有经过条件判断的，也就是说会<strong>无条件的执行一次循环体</strong>，此后的逻辑</p>
+<p>顺序就与while循环相同了——先判断条件，条件为true再执行循环体一次。请看下面的例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151749183.png" alt="image-20210826151749183"></p>
+<p>尽管循环条件始终为 <strong>false</strong> ，但由于 <strong>do…while</strong> 循环第一次执行循环体不判断条件，所以循环体还是执行了一次。运行结果为：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151803866.png" alt="image-20210826151803866"></p>
+<p>常用三种循环方式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151840887.png" alt="image-20210826151840887"></p>
+<h6 id="C-循环结构之continue"><a href="#C-循环结构之continue" class="headerlink" title="C#循环结构之continue"></a>C#循环结构之continue</h6><p>循环中可以应用 <strong>continue</strong> 关键字中止一次循环，直接进入下一次。请看下面的例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151932244.png" alt="image-20210826151932244"></p>
+<p>当程序执行到到 <strong>continue;</strong> 的时候，会立即停止本次循环体，直接进入下一次循环。所以，第三行输出比其他行少一些：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826151950175.png" alt="image-20210826151950175"></p>
+<p>所以，可以使用 <strong>continue</strong> 关键字，在循环中剔除一些特殊的数据。</p>
+<h6 id="C-循环结构之break"><a href="#C-循环结构之break" class="headerlink" title="C#循环结构之break"></a>C#循环结构之break</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">前面学习 switch 结构时，我们曾经遇到过 break 关键字， break 在 switch 结构的作用是“跳出 switch 结构”。break 关键字还可以用在循环中，作用是“结束循环”。下面的循环代码中，当 x==<span class="number">3</span> 的时候会执行 break ：</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826152033676.png" alt="image-20210826152033676"></p>
+<p>运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826152050605.png" alt="image-20210826152050605"></p>
+<h6 id="C-循环结构之嵌套循环"><a href="#C-循环结构之嵌套循环" class="headerlink" title="C#循环结构之嵌套循环"></a>C#循环结构之嵌套循环</h6><p>在一个循环体中包含另一个循环，称为“<strong>嵌套循环</strong>”。当2个循环嵌套的时候，<strong>外层循环体执行一次，内层循环体执行 n 次</strong>（ n 是内层循环的次数）。请看下面的例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826152523860.png" alt="image-20210826152523860"></p>
+<p>运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210826152540015.png" alt="image-20210826152540015"></p>
+<p>比较代码和运行结果，我们发现，内层循环体执行 3 次，外层循环体执行 1 次。这就有点像钟表上的时针和分针——时针走一格，分针走一圈。</p>
+<h6 id="C-的声明数组和赋值"><a href="#C-的声明数组和赋值" class="headerlink" title="C#的声明数组和赋值"></a>C#的声明数组和赋值</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">编程中有这样一种情形：我们需要存储多个同类型数据。比如，保存 <span class="number">1600</span> 个学生的年龄。是否需要声明 <span class="number">1600</span> 个 <span class="keyword">int</span> 类型的变量？过了一年，学生们长了 <span class="number">1</span> 岁，是否需要给每个变量重新赋值？这件事情，想想就怕怕。好在C#中有一种**数组**，专门存储一组相同类型的数据。数组的声明和初始化语法如下：</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">数据类型[ ] 数组名 = <span class="keyword">new</span>数据类型[长度]; </span><br></pre></td></tr></table></figure>
+<p>注意：数组名像变量名一样要遵循标识符的命名规则；长度必须是整数</p>
+<p>下面我们来比较变量和数组的声明与初始化，右边是在内存中为变量和数组分配空间的示意：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828112046153.png" alt="image-20210828112046153"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">对比变量 x 和数组 y 就会发现，数组 y 中其实包含了 <span class="number">3</span> 个 double 类型的变量，为什么是 <span class="number">3</span> 个？因为初始化数组时在 [ ] 中声明的长度为 <span class="number">3</span> 。既然都在数组 y 中，所以 <span class="number">3</span> 个变量（应该叫数组元素）的名字都叫 y ，为了区分它们，按照顺序给它们加上索引 [<span class="number">0</span>]、[<span class="number">1</span>]、[<span class="number">2</span>] 。请注意：数组的索引从 <span class="number">0</span> 开始递增。那么，数组 y 中 <span class="number">3</span> 个元素的名字就变成了 y[<span class="number">0</span>]、y[<span class="number">1</span>]、y[<span class="number">2</span>] 。最后再注意一点：数组经过初始化以后，数组元素有默认的初始值， double 类型为 <span class="number">0.0</span> ， <span class="keyword">int</span> 类型为 <span class="number">0</span> ， char 类型为 <span class="comment">&#x27;a&#x27; ， bool 类型为 false ， string 类型为 null 。</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828112227655.png" alt="image-20210828112227655"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">上例中，需要注意的是元素的索引，数组元素索引从 0 开始递增，所以长度为 3 的数组，其元素索引为 [0]、[1]、[2] 。</span><br></pre></td></tr></table></figure>
+<p>如何知道一个数组的长度呢？ <strong>数组.Length</strong> 属性会返回数组的长度（即数组元素的个数）。请看下面的例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828112339383.png" alt="image-20210828112339383"></p>
+<p>代码中的 <strong>friends.Length</strong> 会返回 friends 数组的长度，请看运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828112353879.png" alt="image-20210828112353879"></p>
+<h6 id="C-访问数组元素"><a href="#C-访问数组元素" class="headerlink" title="C#访问数组元素"></a>C#访问数组元素</h6><p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828112439800.png" alt="image-20210828112439800"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">上例中，数组 a 的初始化方式我们已经学习过了；数组 b、c、d 是在初始化时为数组元素指定初始值，请注意数组 d 用 [<span class="number">3</span>] 声明了数组长度，后面 &#123; &#125; 中的初始值个数要与 [ ] 中声明的长度相同。数组 b、c 初始化没有声明长度，长度由 &#123; &#125; 中的初始值个数确定。</span><br></pre></td></tr></table></figure>
+<h6 id="算法——查找（一）"><a href="#算法——查找（一）" class="headerlink" title="算法——查找（一）"></a>算法——查找（一）</h6><p>写查找的算法，需要做 2 件事，<strong>一是写循环访问每一个数据，二是对每一个数据进行验证</strong>。这样，就需要写 2 个“条件”：<strong>循环条件</strong>和<strong>筛选条件</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140511124.png" alt="image-20210828140511124"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">如上例，循环条件是`x&lt;=<span class="number">10</span>`，筛选条件是`x%<span class="number">2</span>==<span class="number">0</span>`。初学者常见的错误是把 <span class="number">2</span> 个条件都写在循环条件里，比如把循环条件写成 x&lt;=<span class="number">10</span> &amp;&amp; x%<span class="number">2</span>== <span class="number">0</span> ，请注意甄别：循环条件必须能够遍历每一个数据，如果你写的循环条件会漏掉某些数据，或者循环没有能够正常运行，请检查是不是把筛选条件也写在循环条件里了。</span><br></pre></td></tr></table></figure>
+<h6 id="算法——查找（二）"><a href="#算法——查找（二）" class="headerlink" title="算法——查找（二）"></a>算法——查找（二）</h6><p>一组数据中只要有一个符合条件，就可以认为“有符合条件的数据”；<strong>但只有一组数据中每一个都不符合条件，才能认为“没有符合条件的数据”</strong>——<strong>一个相等即为”有”，全都不等才是”无”</strong>。</p>
+<p>那么，到底应当怎样判断有无呢？请看下面的代码：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140716121.png" alt="image-20210828140716121"></p>
+<p>变量 <strong>hasNbr</strong> 起到了关键作用：<strong>记录筛选结果</strong>。它的初始值为 <strong>false</strong> ，表示<strong>没有</strong>，如果循环中找到了相等的数据，再修改 hasNbr 的值为 <strong>true</strong> ，表示<strong>有</strong>。循环结束后，只要看看变量 <strong>hasNbr</strong> 是 <strong>true</strong> 还是 <strong>false</strong> ，就知道循环中是否修改过。运行结果如下（有诺贝尔）：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140748443.png" alt="image-20210828140748443"></p>
+<p>删去数组中的“诺贝尔”，再次运行程序：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140803109.png" alt="image-20210828140803109"></p>
+<h6 id="C-的foreach关键字"><a href="#C-的foreach关键字" class="headerlink" title="C#的foreach关键字"></a>C#的foreach关键字</h6><p><strong>for</strong> 循环使我们可以通过索引访问数组元素；而 <strong>foreach</strong> 循环则可以<strong>不依赖索引</strong>而读取每一个数组元素。下面的示例代码声明了一个整型数组，然后通过两种方法打印数组元素：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140839121.png" alt="image-20210828140839121"></p>
+<p>运行结果是相同的：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140854161.png" alt="image-20210828140854161"></p>
+<p>使用 <strong>foreach</strong> 的语法：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828140907208.png" alt="image-20210828140907208"></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">了解了foreach循环的语法，你可能会有疑问：好像 foreach循环能做的 <span class="keyword">for</span>都能做，foreach存在的意义是什么呢？其实，C#中还存在一些类似于数组的数据组织方式，它们中有一些是没有元素索引的，对于这些元素，只能通过foreach遍历。关于那些更高级的对象，我们留待后面的课程介绍。</span><br></pre></td></tr></table></figure>
+<h6 id="C-的二维数组的声明和访问"><a href="#C-的二维数组的声明和访问" class="headerlink" title="C#的二维数组的声明和访问"></a>C#的二维数组的声明和访问</h6><p><strong>二维数组，就是以数组作为元素的数组</strong>。挺拗口的，看看它跟一维数组的对比：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828141101425.png" alt="image-20210828141101425"></p>
+<p>左边的 a 是一维数组，数组中包含 4 个 int 型变量：a[0]、a[1]、a[2]、a[3] 。</p>
+<p>总结一下，二维数组这样声明：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[,] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>,<span class="number">3</span>]; //包含<span class="number">2</span>个一维数组，每个一维数组包含<span class="number">3</span>个变量，总共<span class="number">2</span>*<span class="number">3</span>=<span class="number">6</span>个数组元素</span><br></pre></td></tr></table></figure>
+<p>二维数组元素这样赋值和打印：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">arr[<span class="number">1</span>,<span class="number">0</span>] = <span class="number">28</span>; //二维数组元素有<span class="number">2</span>个索引，都是从<span class="number">0</span>开始，以arr数组为例，元素索引从[<span class="number">0</span>,<span class="number">0</span>]到[<span class="number">1</span>,<span class="number">2</span>]Console.<span class="keyword">Write</span>( arr[<span class="number">1</span>,<span class="number">0</span>] );</span><br></pre></td></tr></table></figure>
+<p>我们可以用二维数组管理相关的数据，比如有 4 名同学参加语文和数学两门考试，我们用二维数组存储他们的成绩，每位同学的 2 门课分数，存储在一个一维数组中：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210828143117685.png" alt="image-20210828143117685"></p>
+<h3 id="C-实现封装"><a href="#C-实现封装" class="headerlink" title="C#实现封装"></a>C#实现封装</h3><h6 id="C-中类和对象的概念"><a href="#C-中类和对象的概念" class="headerlink" title="C#中类和对象的概念"></a>C#中类和对象的概念</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、	面向对象设计思想使用三种基本的设计手段：封装、继承、多态来模拟现实世界的事物。<span class="number">2</span>、	一个小朋友是对象，多小朋友的特征总结出来就是类。<span class="number">3</span>、	人这个类有姓名、性别、年龄、身高、爱好等特征。姓名、性别、年龄、身高是静态特征，它们通常是一个名词，可用字段属性来表示；而爱好是动态的行为，它是一个动词，难以用文字或数字来描述，可用方法来实现。</span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">例：定义一个关于小朋友的类class Child&#123;		stirng _<span class="keyword">name</span>; //姓名		string _sex; //性别		<span class="keyword">int</span> _age; //年龄           字段，用来描述小朋友的静态特征		<span class="keyword">int</span> _height; //身高			void PlayBall()   //方法的声明	&#123;//方法体，方法的实现    方法，用来描述小朋友的动态行为		//代码略&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>创建一个小朋友类的对象，也叫类的实例化，如：<br>Child xiaoMing=new Child(); //实例化了Child类的对象</p>
+<h6 id="C-定义类"><a href="#C-定义类" class="headerlink" title="C#定义类"></a>C#定义类</h6><p>例化对象在Main方法中，类名 对象名=new 类名（）；Child xiaoming=new Child();<br>有了对象后可以访问他的字段属性和方法<br>访问字段：对象名.字段=”值”; xiaoming._name=”小明”;<br>调用方法：对象名.方法名（）;  xiaoming.PlayBall();<br>输出字段：对象名.字段  xiaoming._name</p>
+<h6 id="C-实例化对象并访问对象成语"><a href="#C-实例化对象并访问对象成语" class="headerlink" title="C#实例化对象并访问对象成语"></a>C#实例化对象并访问对象成语</h6><p>例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922173457333.png" alt="image-20210922173457333"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922173710126.png" alt="image-20210922173710126"></p>
+<p>调试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922173730330.png" alt="image-20210922173730330"></p>
+<h6 id="C-访问修饰符public-amp-private"><a href="#C-访问修饰符public-amp-private" class="headerlink" title="C#访问修饰符public&amp;private"></a>C#访问修饰符public&amp;private</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">访问修饰符：public 公共的 ：可以在其他类中访问private 私有的：不能在其他类中访问（如没有设置访问修饰符，默认为private)</span><br></pre></td></tr></table></figure>
+<h6 id="C-封装的概念"><a href="#C-封装的概念" class="headerlink" title="C#封装的概念"></a>C#封装的概念</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">防止字段被随意修改，引用封装<span class="number">1</span>，隐藏对象信息<span class="number">2</span>，留出访问借口private string _sex;  //隐藏字段public string Sex    //公开属性&#123;<span class="keyword">get</span>&#123;return_sex;&#125; 读    //只有<span class="keyword">get</span>就只读不能写修改字段，达到保护的目的//set&#123;_sex=value;&#125; 写&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="C-代码实现属性封装"><a href="#C-代码实现属性封装" class="headerlink" title="C#代码实现属性封装"></a>C#代码实现属性封装</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">属性封装技巧：private 数据类型 _字段名称;public 与上数据类型保持一致 字段名称(首字母大写)&#123;<span class="keyword">get</span>&#123; <span class="keyword">return</span> _字段名称; &#125;//读访问器set&#123; _字段名称 = value; &#125;//写访问器&#125;新字段名称在Main中的也要引用出来。封装快捷键：Ctrl + R + E</span><br></pre></td></tr></table></figure>
+<h6 id="C-只读属性"><a href="#C-只读属性" class="headerlink" title="C#只读属性"></a>C#只读属性</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">将set属性删除就是只读属性，则Main中不能为属性赋值了，想要赋值<span class="number">1</span>.可以得在Child.cs中为字段直接赋值：private string sex=<span class="string">&quot;男&quot;</span>;同样的也不能在Main中修改；<span class="number">2</span>.用构造方法</span><br></pre></td></tr></table></figure>
+<h6 id="C-通过set决约束属性赋值"><a href="#C-通过set决约束属性赋值" class="headerlink" title="C#通过set决约束属性赋值"></a>C#通过set决约束属性赋值</h6><p>在set访问器中添加条件，约束性赋值：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922175058972.png" alt="image-20210922175058972"></p>
+<h6 id="C-定义并调用无参方法"><a href="#C-定义并调用无参方法" class="headerlink" title="C#定义并调用无参方法"></a>C#定义并调用无参方法</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">对象&#123;字段、属性、方法&#125;使用方法&#123;定义方法——调用方法（声明方法——实例化对象——调用方法）&#125;声明方法：访问修饰符 返回值 方法名      例：public viod EatSugar()                &#123;                   Console.WriteLine(<span class="string">&quot;我是吃糖的方法体&quot;</span>);                &#125;实例化对象：类名 对象名 = <span class="keyword">new</span> 类名();        例：Child child = <span class="keyword">new</span> Child();调用方法：对象名.方法名();      例：child.EatSugar();</span><br></pre></td></tr></table></figure>
+<h6 id="C-定义并调用带参方法"><a href="#C-定义并调用带参方法" class="headerlink" title="C#定义并调用带参方法"></a>C#定义并调用带参方法</h6><p>例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922180101429.png" alt="image-20210922180101429"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922180215519.png" alt="image-20210922180215519"></p>
+<p>调试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922180353468.png" alt="image-20210922180353468"></p>
+<p>C#方法的重载</p>
+<p>在带参方法中继续添加</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922180924379.png" alt="image-20210922180924379"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922181211863.png" alt="image-20210922181211863"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210922181357220.png" alt="image-20210922181357220"></p>
+<h6 id="C-通过return结束方法调用"><a href="#C-通过return结束方法调用" class="headerlink" title="C#通过return结束方法调用"></a>C#通过return结束方法调用</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">通过<span class="keyword">return</span>结束方法的调用public void Eat(<span class="keyword">int</span> age)&#123;    <span class="keyword">if</span>(age&lt;=<span class="number">6</span>)&#123;       Console.WriteLine(<span class="string">&quot;不要吃糖&quot;</span>);       <span class="keyword">return</span>;   //在这里就tu退出了方法，后面不会执行    &#125;    Console.WriteLine(<span class="string">&quot;这里就不会输出了&quot;</span>);&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="C-通过return带回返回值"><a href="#C-通过return带回返回值" class="headerlink" title="C#通过return带回返回值"></a>C#通过return带回返回值</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">有返回值方法的调a用：<span class="number">1</span>.方法返回值的类型不应该写成void，应该写成与返回值相同的类型<span class="number">2</span>.在执行到最后的时候用<span class="keyword">return</span>返回计算结果<span class="number">3</span>.调用时需要一个与返回值相同类型的变量来接受调用语句的结果</span><br></pre></td></tr></table></figure>
+<h6 id="C-中无参构造方法"><a href="#C-中无参构造方法" class="headerlink" title="C#中无参构造方法"></a>C#中无参构造方法</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">当创建类对象时，Child child = <span class="keyword">new</span> Child();//这个<span class="keyword">new</span> Child()即就是调用构造方法；<span class="number">1</span>.构造方法的作用：为属性赋值；<span class="number">2</span>.如果类中没有显式定义构造方法，则会有一个默认的无参的构造方法；<span class="number">3</span>.如果类中显式定义构造方法，类中就没有默认的无参的构造方法；<span class="number">4</span>.构造方法只能通过“<span class="keyword">new</span> 方法名()”的方式调用构造方法；<span class="number">5</span>.构造方法区别于普通方法：构造方法通常声明为public、没有返回值类型、方法名与类名相同</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210924143750953.png" alt="image-20210924143750953"></p>
+<h6 id="C-中有参构造方法"><a href="#C-中有参构造方法" class="headerlink" title="C#中有参构造方法"></a>C#中有参构造方法</h6><p>有参数的构造方法：<br>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public Child (string name,string sex,int age)&#123;        Name=name;Sex=sex;Age=age&#125;</span><br></pre></td></tr></table></figure>
+<p>调用的时候：Child child=new Child(“小米”，“男”，19)</p>
+<h6 id="C-中this关键字"><a href="#C-中this关键字" class="headerlink" title="C#中this关键字"></a>C#中this关键字</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">this关键字可以用来表示：字段、属性、方法this.sex = sex;（此处用来区别重名的）this.sex //表示当前对象“字段”，sex //表示形参sex</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210924143950958.png" alt="image-20210924143950958"></p>
+<h6 id="C-中构造方法重载"><a href="#C-中构造方法重载" class="headerlink" title="C#中构造方法重载"></a>C#中构造方法重载</h6><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">构造方法重载：与方法重载一样，名相同但是参数不能相同。根据传入的参数类型选择最匹配的构造方法一旦定义了有参构造后，原始的默认的无参构造就失效了Child child1=<span class="keyword">new</span> Child (<span class="string">&quot;小小&quot;</span>,<span class="string">&quot;男&quot;</span>,<span class="number">4</span>);Child child2 = <span class="keyword">new</span> Child(<span class="string">&quot;大大&quot;</span>,<span class="number">5</span>);            //构造方法的重载和普通方法的重载类似，形参列表不能完全相同，类会选择形参最接近的构造方法构造。            //当构造方法被显示写出来之后，默认的无参构造方法就消失了。这一点需要注意。</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/image-20210924144244848.png" alt="image-20210924144244848"></p>
+<p>C#中对象初始化器</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">初始化对象的三个方法：用有参构造方法初始化对象：方法名 对象名 = <span class="keyword">new</span> 方法名(给各项属性参数赋值)用无参构造方法初始化对象：方法名 对象名 = <span class="keyword">new</span> 方法名()给各项属性赋值用对象初始化器初始化对象：方法名 对象名 = <span class="keyword">new</span> 方法名 &#123; 给各项属性赋值 &#125;用对象初始化器初始化对象和使用无参构造方法初始化对象是一样的，更简洁</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">AJay-Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ajay-z.github.io/2021/09/28/C-%E7%AC%94%E8%AE%B0/">https://ajay-z.github.io/2021/09/28/C-%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://AJay-Z.github.io" target="_blank">AJayの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C#</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/img/R001.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/09/28/cocos2dx%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/AJay-Z/AJay-img/cocos2dx/cocos.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cocos2dx笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">C#开发基础入门</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%87%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">基本输出信息</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">C#的常量</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">算法——交换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">C#的数据类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">C#的类型转换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E6%A0%87%E8%AF%86%E7%AC%A6%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">C#标识符的命名规则</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">C#的算术运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">C#的比较运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">C#的逻辑运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">C#的运算符优先级</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%94%A8%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%8F%8F%E8%BF%B0%E7%A8%8B%E5%BA%8F%E9%80%BB%E8%BE%91"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">C#用流程图描述程序逻辑</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E5%88%A4%E6%96%AD%E5%92%8C%E5%88%86%E6%94%AF"><span class="toc-number">1.0.0.12.</span> <span class="toc-text">C#中判断和分支</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%ADif%E2%80%A6else%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.13.</span> <span class="toc-text">C#中if…else条件结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E5%B5%8C%E5%A5%97%E7%9A%84if%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.14.</span> <span class="toc-text">C#中嵌套的if结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E5%A4%9A%E9%87%8Dif%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.15.</span> <span class="toc-text">C#中多重if结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%ADelse%E4%B8%8Eif%E7%9A%84%E5%8C%B9%E9%85%8D"><span class="toc-number">1.0.0.16.</span> <span class="toc-text">C#中else与if的匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.17.</span> <span class="toc-text">C#的条件运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84switch%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.18.</span> <span class="toc-text">C#的switch结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.0.0.19.</span> <span class="toc-text">C#循环流程图和while循环</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E6%B1%82%E5%92%8C"><span class="toc-number">1.0.0.20.</span> <span class="toc-text">C#算法——求和</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%ADfor%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.0.0.21.</span> <span class="toc-text">C#中for循环</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%ADdo%E2%80%A6while%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.0.0.22.</span> <span class="toc-text">C#中do…while循环</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E4%B9%8Bcontinue"><span class="toc-number">1.0.0.23.</span> <span class="toc-text">C#循环结构之continue</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E4%B9%8Bbreak"><span class="toc-number">1.0.0.24.</span> <span class="toc-text">C#循环结构之break</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E4%B9%8B%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.0.0.25.</span> <span class="toc-text">C#循环结构之嵌套循环</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E5%92%8C%E8%B5%8B%E5%80%BC"><span class="toc-number">1.0.0.26.</span> <span class="toc-text">C#的声明数组和赋值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.0.27.</span> <span class="toc-text">C#访问数组元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E6%9F%A5%E6%89%BE%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-number">1.0.0.28.</span> <span class="toc-text">算法——查找（一）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E6%9F%A5%E6%89%BE%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-number">1.0.0.29.</span> <span class="toc-text">算法——查找（二）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84foreach%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.0.0.30.</span> <span class="toc-text">C#的foreach关键字</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%9A%84%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E8%AE%BF%E9%97%AE"><span class="toc-number">1.0.0.31.</span> <span class="toc-text">C#的二维数组的声明和访问</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E5%AE%9E%E7%8E%B0%E5%B0%81%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">C#实现封装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">C#中类和对象的概念</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">C#定义类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%B9%B6%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E6%88%90%E8%AF%AD"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">C#实例化对象并访问对象成语</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6public-amp-private"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">C#访问修饰符public&amp;private</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%B0%81%E8%A3%85%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">C#封装的概念</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E6%80%A7%E5%B0%81%E8%A3%85"><span class="toc-number">2.0.0.6.</span> <span class="toc-text">C#代码实现属性封装</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%8F%AA%E8%AF%BB%E5%B1%9E%E6%80%A7"><span class="toc-number">2.0.0.7.</span> <span class="toc-text">C#只读属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E9%80%9A%E8%BF%87set%E5%86%B3%E7%BA%A6%E6%9D%9F%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">2.0.0.8.</span> <span class="toc-text">C#通过set决约束属性赋值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%AE%9A%E4%B9%89%E5%B9%B6%E8%B0%83%E7%94%A8%E6%97%A0%E5%8F%82%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.9.</span> <span class="toc-text">C#定义并调用无参方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%AE%9A%E4%B9%89%E5%B9%B6%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.10.</span> <span class="toc-text">C#定义并调用带参方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E9%80%9A%E8%BF%87return%E7%BB%93%E6%9D%9F%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="toc-number">2.0.0.11.</span> <span class="toc-text">C#通过return结束方法调用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E9%80%9A%E8%BF%87return%E5%B8%A6%E5%9B%9E%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">2.0.0.12.</span> <span class="toc-text">C#通过return带回返回值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.13.</span> <span class="toc-text">C#中无参构造方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.14.</span> <span class="toc-text">C#中有参构造方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%ADthis%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.0.0.15.</span> <span class="toc-text">C#中this关键字</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E4%B8%AD%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="toc-number">2.0.0.16.</span> <span class="toc-text">C#中构造方法重载</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By AJay-Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">不忘初心❤</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/gh/zykjofficial/zykjofficial.github.io@master/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/zykjofficial/zykjofficial.github.io@master/js/main.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7sEKGQi1DPws2HqwgGtQR2ob-gzGzoHsz',
+      appKey: 'YwiuY3OClm3O0FtJ2ROffzCC',
+      placeholder: '输入昵称和邮箱，可更改名字和头像哟😋！',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://ajay-z.github.io/2021/09/28/C-%E7%AC%94%E8%AE%B0/'
+    this.page.identifier = '2021/09/28/C-笔记/'
+    this.page.title = 'C#笔记'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><link rel="stylesheet" href="/js/AJay.js"><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="I,💗,AJay" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/theme_f/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
